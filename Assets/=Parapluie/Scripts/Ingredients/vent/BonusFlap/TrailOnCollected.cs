@@ -23,7 +23,6 @@ public class TrailOnCollected : MonoBehaviour
     private float curvature;
     
     private float timer = 0f;
-    private float t => timer / duration;
 
     private bool isCollected = false;
     
@@ -48,6 +47,8 @@ public class TrailOnCollected : MonoBehaviour
 
     private void Update()
     {
+        float t = timer / duration;
+        Debug.Log($"t = {t}");
         if (t < 1f)
         {
             transform.position = player.transform.position + angleDirection * ((1f - (2f * t - 1f) * (2f * t - 1f)) * curvature);
@@ -57,6 +58,7 @@ public class TrailOnCollected : MonoBehaviour
         {
             bonusFlap.Player.EnergieFlap = 100;
             isCollected = true;
+            Debug.Log("Collected");
         }
 
         if (t > 2f) transform.parent.gameObject.SetActive(false);

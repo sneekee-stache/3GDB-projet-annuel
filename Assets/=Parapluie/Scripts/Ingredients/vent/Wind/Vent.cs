@@ -31,7 +31,9 @@ public class Vent : MonoBehaviour
 
     [HideInInspector] public Vector3 AjoutVent;
 
+#if UNITY_EDITOR
     private WindRendererParameters windParticles;
+#endif
 
     private void Start()
     {
@@ -44,7 +46,9 @@ public class Vent : MonoBehaviour
         AjoutVent = transform.forward * force;
 
 
+#if UNITY_EDITOR
         windParticles = GetComponent<WindRendererParameters>();
+#endif
     }
 
     private void OnTriggerStay(Collider other)
@@ -242,10 +246,13 @@ public class Vent : MonoBehaviour
         Gizmos.color = Color.white;
     }
 
+
+#if UNITY_EDITOR
     private void OnValidate()
     {
         if (windParticles == null) windParticles = GetComponent<WindRendererParameters>();
 
         windParticles.Force = force;
     }
+#endif
 }

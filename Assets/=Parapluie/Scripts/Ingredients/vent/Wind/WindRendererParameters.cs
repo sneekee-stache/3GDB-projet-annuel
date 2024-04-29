@@ -1,8 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEditor.SceneManagement;
+#endif
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -31,6 +33,7 @@ public class WindRendererParameters : MonoBehaviour
             paramChanged = true;
         }
     }
+#if UNITY_EDITOR
 
     private void Update()
     {
@@ -57,11 +60,10 @@ public class WindRendererParameters : MonoBehaviour
             velocity.speedModifier = force/1.3f;
         }
 
-        
         PrefabUtility.RecordPrefabInstancePropertyModifications(particles.gameObject);
-
         paramChanged = false;
     } 
+#endif
     
     
 }

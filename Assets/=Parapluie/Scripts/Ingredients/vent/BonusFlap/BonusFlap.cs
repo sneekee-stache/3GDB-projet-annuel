@@ -25,10 +25,8 @@ public class BonusFlap : MonoBehaviour
 
     // Private variables
     
-    private Player player;
+    [HideInInspector] public Player Player;
     private MeshRenderer meshRenderer;
-    
-    public Player Player => player;
     
     private void OnTriggerEnter(Collider other)
     {
@@ -48,11 +46,11 @@ public class BonusFlap : MonoBehaviour
     }
     private void Start()
     {
-        Parapluie = GameObject.FindWithTag("Player").transform;
+        //Parapluie = GameObject.FindWithTag("Player").transform;
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.enabled = false;
         timerReloadBonus = TimerReloadBonusReset;
-        player = Parapluie.GetComponent<Player>();
+        Player = Parapluie.GetComponent<Player>();
     }
     private void Update()
     {
