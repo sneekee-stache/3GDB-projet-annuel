@@ -51,7 +51,7 @@ public class WindRendererParameters : MonoBehaviour
         if(!DontResize)
         {
             main.startLifetime = ((transform.localScale.z / 100f) * 2f) / (force/1.3f);
-            trails.lifetime = (10f / transform.localScale.z) ;
+            trails.lifetime = (10f / transform.localScale.z) * force ;
             shape.scale = new Vector3(0, transform.localScale.y, transform.localScale.x);
             emission.rateOverTime = transform.localScale.x * transform.localScale.y * (dampedDensity / 100f);
             velocity.speedModifier = force/1.3f;

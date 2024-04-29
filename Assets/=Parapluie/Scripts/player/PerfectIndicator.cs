@@ -28,7 +28,7 @@ public class PerfectIndicator : MonoBehaviour
             perfectIndicatorScale = 0f; ;
         }
         
-        if (!Player.EnergieDown && (Player.EnergieFlap == Player.EnergieRW || (Player.EnergieFlap < Player.EnergieRW && Player.EnergieRW - Player.EnergieFlap <= 3) || (Player.EnergieFlap > Player.EnergieRW && Player.EnergieFlap - Player.EnergieRW <= 3)))
+        if (!Player.EnergieDown && (Player.EnergieFlap == Player.EnergieRW || (Player.EnergieFlap < Player.EnergieRW && Player.EnergieRW - Player.EnergieFlap <= 5) || (Player.EnergieFlap > Player.EnergieRW && Player.EnergieFlap - Player.EnergieRW <= 5)))
         {
             PerfectIndicatorMaterial.SetColor("_EmissionColor", CrayonParapluie.GetColor("_BaseColor"));
         }

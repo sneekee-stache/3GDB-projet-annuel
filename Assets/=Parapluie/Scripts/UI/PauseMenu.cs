@@ -25,6 +25,7 @@ public class PauseMenu : MonoBehaviour
         {
             MenuActive();
         }
+        if(isMenu && Input.GetButtonDown("Back"))MenuActive();
     }
     public void Reprise()
     {

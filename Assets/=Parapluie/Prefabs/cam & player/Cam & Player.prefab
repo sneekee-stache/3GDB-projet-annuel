@@ -460,6 +460,10 @@ PrefabInstance:
       propertyPath: OnMegaPerfectFlap.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6927864101203167139, guid: 83321dc4d89b7df4fab3d8bddeca9905, type: 3}
+      propertyPath: perfectIndicatorScaleSpeedDown
+      value: 0.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 83321dc4d89b7df4fab3d8bddeca9905, type: 3}
 --- !u!114 &1133014757019756091 stripped

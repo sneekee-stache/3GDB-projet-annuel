@@ -379,20 +379,21 @@ public class Player : MonoBehaviour
     public void Flap()
     {
         //perfect?
-        if ((EnergieFlap == EnergieRW || (EnergieFlap < EnergieRW && EnergieRW - EnergieFlap <= 3) ||
-             (EnergieFlap > EnergieRW && EnergieFlap - EnergieRW <= 3)))
+        if ((EnergieFlap == EnergieRW || (EnergieFlap < EnergieRW && EnergieRW - EnergieFlap <= 5) ||
+             (EnergieFlap > EnergieRW && EnergieFlap - EnergieRW <= 5)))
         {
             if(!CHEAT) rb.velocity = new Vector3(0,0,0);
             actualForce = ForceJump + ForceBonusJump;
             FMODUnity.RuntimeManager.PlayOneShot("event:/Parapluie/player_action/flap_perfect");
             OnPerfectFlap.Invoke();
+            Debug.Log("perfect");
         }
         else 
         {
             OnFlap.Invoke();
             actualForce = ForceJump;
         }
-        EnergieRW = EnergieFlap - CostFlap + 5f;
+        EnergieRW = EnergieFlap - CostFlap + 10f;
         onGround = false;
         onGroundFMOD = true;
         
@@ -416,8 +417,8 @@ public class Player : MonoBehaviour
     public void MegaFlap()
     {
         //perfect?
-        if ((EnergieFlap == EnergieRW || (EnergieFlap < EnergieRW && EnergieRW - EnergieFlap <= 3) ||
-             (EnergieFlap > EnergieRW && EnergieFlap - EnergieRW <= 3)))
+        if ((EnergieFlap == EnergieRW || (EnergieFlap < EnergieRW && EnergieRW - EnergieFlap <= 5) ||
+             (EnergieFlap > EnergieRW && EnergieFlap - EnergieRW <= 5)))
         {
             if(!CHEAT) rb.velocity = (rb.velocity / 3);
             
@@ -432,7 +433,7 @@ public class Player : MonoBehaviour
             OnMegaFlap.Invoke();
         }
 
-        EnergieRW = EnergieFlap - CostMegaFlap  + 5f;
+        EnergieRW = EnergieFlap - CostMegaFlap  + 10f;
         onGround = false;
         onGroundFMOD = true;
         parapluieFerme.SetActive(true);
