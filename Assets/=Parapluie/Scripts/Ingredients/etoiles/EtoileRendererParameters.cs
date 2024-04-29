@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+//using UnityEditor;
+//using UnityEditor.SceneManagement;
 
 [ExecuteInEditMode]
 public class EtoileRendererParameters : MonoBehaviour
@@ -33,13 +34,13 @@ public class EtoileRendererParameters : MonoBehaviour
             velocity.speedModifier = transform.localScale.x / 5f;
             trails.widthOverTrailMultiplier = transform.localScale.x / 5f;
             
-            PrefabUtility.RecordPrefabInstancePropertyModifications(particle.gameObject);
+            //PrefabUtility.RecordPrefabInstancePropertyModifications(particle.gameObject);
         }
     }
 
     private void OnValidate()
     {
         beacon.SetActive(enableBeacon);
-        PrefabUtility.RecordPrefabInstancePropertyModifications(beacon.gameObject);
+        //PrefabUtility.RecordPrefabInstancePropertyModifications(beacon.gameObject);
     }
 }

@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.SceneManagement;
+//using UnityEditor;
+//using UnityEditor.SceneManagement;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -58,7 +58,7 @@ public class WindRendererParameters : MonoBehaviour
         }
 
         
-        PrefabUtility.RecordPrefabInstancePropertyModifications(particles.gameObject);
+        //PrefabUtility.RecordPrefabInstancePropertyModifications(particles.gameObject);
 
         paramChanged = false;
     } 
